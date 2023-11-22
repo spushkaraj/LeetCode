@@ -43,7 +43,16 @@ var sortColors = function(nums) {
  * Time Complexity - O(n)
  * Space Complexity - O(1)
  * 
- * One-Pass solution - Dutch National Flag algorithm 
+ * One-Pass solution - Dutch National Flag algorithm
+ * 
+ * The idea behind the algorithm is to keep all the 0s before the low pointer, 
+ * all the 2s after the high pointer, and all the 1s between the low and high 
+ * pointers. The algorithm moves the mid pointer through the array, comparing 
+ * the value at each position with 1. If the value is 0, the element is swapped 
+ * with the element at the low pointer, and the low and mid pointers are 
+ * incremented. If the value is 2, the element is swapped with the element at 
+ * the high pointer, and the high pointer is decremented. If the value is 1, the
+ * mid pointer is simply incremented.
  */
 var sortColors = function(nums) {
     let [l, m, h] = [0, 0, nums.length-1];
